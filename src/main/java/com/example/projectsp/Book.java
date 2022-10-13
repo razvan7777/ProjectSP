@@ -7,29 +7,36 @@ import java.util.List;
 
 public class Book {
 
-    private String name;
-    private List<String> paragraphs = new ArrayList<>();
-    private List<String> images = new ArrayList<>();
-    private List<String> tables= new ArrayList<>();
+    private String title;
+    private List<Chapter> chapters = new ArrayList<>();
+    private Author author;
 
 
-    public Book(String name) {
-        this.name = name;
+    public Book(String title) {
+        this.title = title;
     }
 
-    public void createNewParagraph(String paragraph) {
-        paragraphs.add(paragraph);
+    public int createChapter(String name){
+
+        Chapter chapter = new Chapter(name);
+        chapters.add(chapter);
+        return chapters.indexOf(chapter);
     }
 
-    public void createNewImage(String image) {
-        images.add(image);
+
+
+    public void addAuthor(Author author) {
+        this.author = author;
     }
 
-    public void createNewTable(String table) {
-        tables.add(table);
-    }
+    public Chapter getChapter(int index) {
+        return chapters.get(index);
 
+    }
     public void print() {
-        System.out.println("The title of the book is "+name +" that contains " + paragraphs +" and images " +images + " and tables "+tables );
+        System.out.println("cartea cu titlul " +title + " are autorul ");
+        author.print();
+        System.out.println(" si capitolele: ");
+        chapters.forEach( e -> e.print());
     }
 }
