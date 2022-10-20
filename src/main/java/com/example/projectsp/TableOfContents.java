@@ -1,16 +1,19 @@
 package com.example.projectsp;
 
-public class Image implements Element {
 
-    private String imageName;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor
+@AllArgsConstructor
+public class TableOfContents implements Element {
+
+    private String something;
 
 
-    public Image(String name) {
-        this.imageName = name;
-    }
-
+    @Override
     public void print() {
-        System.out.println("Imaginea "+imageName);
+        System.out.println(something);
     }
 
     @Override

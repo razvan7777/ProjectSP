@@ -13,4 +13,19 @@ public class Table implements Element {
     public void print(){
         System.out.println("Tabelul "+title);
     }
+
+    @Override
+    public void add(Element a) {
+
+    }
+
+    @Override
+    public void remove(Element a) {
+
+    }
+
+    @Override
+    public Element get(int a) {
+        return null;
+    }
 }
