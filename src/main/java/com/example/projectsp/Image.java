@@ -1,16 +1,24 @@
 package com.example.projectsp;
 
+import java.util.concurrent.TimeUnit;
+
 public class Image implements Element {
 
-    private String imageName;
+    private String url;
+    private String content;
 
 
-    public Image(String name) {
-        this.imageName = name;
+    public Image(String url) {
+        url = url;
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void print() {
-        System.out.println("Imaginea "+imageName);
+        System.out.println("Imaginea "+url);
     }
 
     @Override
