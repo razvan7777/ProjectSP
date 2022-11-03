@@ -1,24 +1,29 @@
 package com.example.projectsp;
 
+import javax.swing.*;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.util.concurrent.TimeUnit;
 
 public class Image implements Element {
 
     private String url;
-    private String content;
+    private BufferedImage content;
 
 
     public Image(String url) {
-        url = url;
-        try {
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        this.url = url;
+        this.content = ImageLoaderFactory.create(url);
     }
 
     public void print() {
-        System.out.println("Imaginea "+url);
+        JLabel picLabel = new JLabel(new ImageIcon(content));
+        JPanel jPanel = new JPanel();
+        jPanel.add(picLabel);
+        JFrame f = new JFrame();
+        f.setSize(new Dimension(content.getWidth(), content.getHeight()));
+        f.add(jPanel);
+        f.setVisible(true);
     }
 
     @Override
