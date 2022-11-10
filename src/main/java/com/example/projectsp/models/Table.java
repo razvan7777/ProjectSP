@@ -1,4 +1,7 @@
-package com.example.projectsp;
+package com.example.projectsp.models;
+
+import com.example.projectsp.Element;
+import com.example.projectsp.Visitor;
 
 public class Table implements Element {
 
@@ -27,5 +30,10 @@ public class Table implements Element {
     @Override
     public Element get(int a) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitTable(this);
     }
 }

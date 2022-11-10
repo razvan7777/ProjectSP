@@ -5,7 +5,7 @@ import java.awt.image.BufferedImage;
 public class ImageLoaderFactory {
 
 
-    static BufferedImage create(String url){
+    public static BufferedImage create(String url){
 
         String extension = url.substring(url.length() - 3);
         if(extension.equals("bmp"))

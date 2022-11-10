@@ -1,4 +1,8 @@
-package com.example.projectsp;
+package com.example.projectsp.models;
+
+import com.example.projectsp.Element;
+import com.example.projectsp.ImageLoaderFactory;
+import com.example.projectsp.Visitor;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,5 +43,10 @@ public class Image implements Element {
     @Override
     public Element get(int a) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 }

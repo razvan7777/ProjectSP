@@ -9,4 +9,6 @@ public interface Element {
 
     public Element get(int a);
 
+    public void accept(Visitor visitor);
+
 }

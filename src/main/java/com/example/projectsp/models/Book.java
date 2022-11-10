@@ -1,9 +1,8 @@
-package com.example.projectsp;
+package com.example.projectsp.models;
 
 
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.projectsp.Element;
 
 public class Book  extends Section{
 

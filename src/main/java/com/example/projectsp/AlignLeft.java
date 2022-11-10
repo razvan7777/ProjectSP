@@ -1,5 +1,7 @@
 package com.example.projectsp;
 
+import com.example.projectsp.models.Paragraph;
+
 public class AlignLeft implements AlignStrategy {
 
 

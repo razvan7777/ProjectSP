@@ -1,18 +1,20 @@
 package com.example.projectsp;
 
+import com.example.projectsp.models.Image;
+
 import java.awt.*;
 
 public class ImageProxy implements Element {
     private String url;
     private Dimension dim;
-    private Image realImage;
+    private com.example.projectsp.models.Image realImage;
 
     public ImageProxy(String url) {
         this.url = url;
     }
 
 
-    public Image loadImage(){
+    public com.example.projectsp.models.Image loadImage(){
         if (realImage ==null)
             realImage = new Image(url);
         return realImage;
@@ -39,5 +41,10 @@ public class ImageProxy implements Element {
     @Override
     public Element get(int a) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
     }
 }

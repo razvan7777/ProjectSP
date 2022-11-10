@@ -1,4 +1,4 @@
-package com.example.projectsp;
+package com.example.projectsp.models;
 
 public class Author {
     private String name;
