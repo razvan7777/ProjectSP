@@ -3,6 +3,7 @@ package com.example.projectsp.models;
 
 
 import com.example.projectsp.Element;
+import com.example.projectsp.Visitor;
 
 public class Book  extends Section{
 
@@ -27,4 +28,6 @@ public class Book  extends Section{
     public void addContent(Element element){
         add(element);
     }
+
+
 }

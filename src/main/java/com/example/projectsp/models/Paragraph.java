@@ -4,8 +4,10 @@ import com.example.projectsp.AlignStrategy;
 import com.example.projectsp.Element;
 import com.example.projectsp.Visitor;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@ToString
 public class Paragraph implements Element {
     private String text;
     private AlignStrategy alignStrategy = null;

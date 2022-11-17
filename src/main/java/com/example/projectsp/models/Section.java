@@ -41,8 +41,16 @@ public class Section implements Element {
 
     @Override
     public void accept(Visitor visitor) {
+        if(this.getClass() != Book.class)
         visitor.visitSection(this);
         elements.forEach( e -> e.accept(visitor));
 
+
+    }
+
+    @Override
+    public String toString() {
+        return
+                 title ;
     }
 }

@@ -6,20 +6,29 @@ import com.example.projectsp.Visitor;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 public class TableOfContents implements Element {
 
-    private String something;
+    private List<String> tableOfContents = new ArrayList<>() ;
 
 
     @Override
     public void print() {
-        System.out.println(something);
+        tableOfContents.forEach((e) -> System.out.println(e));
     }
 
     @Override
     public void add(Element a) {
+
+    }
+
+    public void add(Element a, int pageNumber){
+
+        tableOfContents.add(a.toString()+ " ...............  pg " + pageNumber);
 
     }
 
