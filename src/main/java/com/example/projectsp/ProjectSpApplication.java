@@ -4,8 +4,18 @@ package com.example.projectsp;
 import com.example.projectsp.models.*;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+
+
 @SpringBootApplication
 public class ProjectSpApplication {
+
+
+    public static void Printing(){
+
+        DocumentManager.getInstance().getBook().print();
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -29,12 +39,9 @@ public class ProjectSpApplication {
         cap2.add(par6);
         book.add(cap2);
         book.addAuthor(new Author("author"));
-        Section cap3 = new Section("cap3");
-        book.add(cap3);
-        book.accept(visitor);
-        book.add(visitor.getTableOfContents());
-        book.print();
 
+        DocumentManager.getInstance().setBook(book);
+        Printing();
 
 
 
